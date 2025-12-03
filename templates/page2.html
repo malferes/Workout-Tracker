@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Workout Summary</h1>
+
+{% if workouts %}
+<table border="1" cellpadding="5">
+    <tr>
+        <th>Date</th>
+        <th>Type</th>
+        <th>Minutes</th>
+    </tr>
+    {% for w in workouts %}
+    <tr>
+        <td>{{ w.date }}</td>
+        <td>{{ w.type }}</td>
+        <td>{{ w.minutes }}</td>
+    </tr>
+    {% endfor %}
+</table>
+
+<p><strong>Total Minutes Exercised:</strong> {{ total_minutes }}</p>
+{% else %}
+<p>No workouts logged yet. Go to "Add Workout" to start tracking.</p>
+{% endif %}
+
+{% endblock %}

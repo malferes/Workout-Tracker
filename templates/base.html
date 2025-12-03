@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Workout Tracker App</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <nav>
+        <a href="{{ url_for('index') }}">Dashboard</a> |
+        <a href="{{ url_for('add_workout') }}">Add Workout</a> |
+        <a href="{{ url_for('summary') }}">Summary</a>
+    </nav>
+    <hr>
+    <div class="content">
+        {% block content %}{% endblock %}
+    </div>
+</body>
+</html>
